@@ -1,0 +1,47 @@
+﻿<Window x:Class="Партнеры.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Партнеры"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <ListView Name="partnersListView"  HorizontalAlignment="Center"  >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderBrush="Black" Margin="5" BorderThickness="1" >
+                        <Grid Margin="10" HorizontalAlignment="Stretch" Width="450"  >
+
+                            <WrapPanel Orientation="Vertical" HorizontalAlignment="Left">
+
+                                <WrapPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding Partners.Name}"/>
+                                    <TextBlock Text=" | "/>
+                                    <TextBlock Text="{Binding partner_name}"/>
+                                </WrapPanel>
+                                <TextBlock Text="{Binding director_name}"/>
+                                <WrapPanel>
+                                    <TextBlock Text="+7 "/>
+                                    <TextBlock Text="{Binding phone}"/>
+                                </WrapPanel>
+
+                                <WrapPanel Orientation="Horizontal" >
+                                    <TextBlock Text="Рейтинг: "/>
+                                    <TextBlock Text="{Binding rating}"/>
+                                    <TextBlock Text="%"/>
+                                </WrapPanel>
+
+                            </WrapPanel>
+                            <WrapPanel Orientation="Horizontal" >
+                                <TextBlock Text="Скидка: "/>
+                                <TextBlock Text="{Binding CalculateDiscount}"/>
+                                <TextBlock Text="%"/>
+                            </WrapPanel>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</Window>
