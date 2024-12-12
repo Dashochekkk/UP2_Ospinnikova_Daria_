@@ -15,18 +15,18 @@ namespace Партнеры
     
     public partial class Entities : DbContext
     {
-        public static Entities _context;
-
-        public static Entities GetContext() {
-            if (_context == null)
-                _context = new Entities();
-            return _context;
-        }
+        private static Entities _context;
         public Entities()
             : base("name=Entities")
         {
         }
-    
+        public static Entities GetContext()
+        {
+            if (_context == null)
+                _context = new Entities();
+            return _context;
+        }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();

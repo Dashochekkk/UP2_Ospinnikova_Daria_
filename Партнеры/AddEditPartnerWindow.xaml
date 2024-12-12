@@ -1,0 +1,39 @@
+﻿<Window x:Class="Партнеры.AddEditPartnerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Добавление/редактирование партнера" Height="450" Width="400"
+        Background="{StaticResource SecondaryBackgroundColor}">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Наименование:" Grid.Row="0" Margin="5"/>
+        <TextBox x:Name="NameTextBox" Grid.Row="1" Margin="5"/>
+
+        <TextBlock Text="Тип партнера:" Grid.Row="2" Margin="5"/>
+        <ComboBox x:Name="TypeComboBox" Grid.Row="3" Margin="5">
+            <ComboBoxItem Content="Тип 1"/>
+            <ComboBoxItem Content="Тип 2"/>
+        </ComboBox>
+
+        <TextBlock Text="Рейтинг:" Grid.Row="4" Margin="5"/>
+        <TextBox x:Name="RatingTextBox" Grid.Row="5" Margin="5"/>
+
+        <TextBlock Text="Телефон:" Grid.Row="6" Margin="5"/>
+        <TextBox x:Name="PhoneTextBox" Grid.Row="7" Margin="5"/>
+
+        <StackPanel Grid.Row="8" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Content="Сохранить" Click="Save_Click" Margin="5"/>
+            <Button Content="Отмена" Click="Cancel_Click" Margin="5"/>
+        </StackPanel>
+    </Grid>
+</Window>

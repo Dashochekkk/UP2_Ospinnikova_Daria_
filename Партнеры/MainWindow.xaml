@@ -5,43 +5,61 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Партнеры"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Главная форма" Height="450" Width="800"
+        Background="{StaticResource PrimaryBackgroundColor}">
+    <Window.Resources>
+        <!-- Определяем конвертер -->
+        <local:DiscountConverter x:Key="DiscountConverter"/>
+    </Window.Resources>
     <Grid>
-        <ListView Name="partnersListView"  HorizontalAlignment="Center"  >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <!-- Заголовок -->
+            <RowDefinition Height="*"/>
+            <!-- Список партнеров -->
+            <RowDefinition Height="Auto"/>
+            <!-- Кнопки управления -->
+        </Grid.RowDefinitions>
+
+        <!-- Заголовок -->
+        <TextBlock Text="Список партнеров" FontSize="20" HorizontalAlignment="Center" Margin="10" Grid.Row="0"/>
+
+        <!-- Список партнеров -->
+        <ListView Name="partnersListView" Style="{StaticResource ListViewStyle}" Grid.Row="1" Margin="10">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <Border BorderBrush="Black" Margin="5" BorderThickness="1" >
-                        <Grid Margin="10" HorizontalAlignment="Stretch" Width="450"  >
-
-                            <WrapPanel Orientation="Vertical" HorizontalAlignment="Left">
-
-                                <WrapPanel Orientation="Horizontal">
-                                    <TextBlock Text="{Binding Partners.Name}"/>
-                                    <TextBlock Text=" | "/>
-                                    <TextBlock Text="{Binding partner_name}"/>
-                                </WrapPanel>
-                                <TextBlock Text="{Binding director_name}"/>
-                                <WrapPanel>
-                                    <TextBlock Text="+7 "/>
-                                    <TextBlock Text="{Binding phone}"/>
-                                </WrapPanel>
-
-                                <WrapPanel Orientation="Horizontal" >
-                                    <TextBlock Text="Рейтинг: "/>
-                                    <TextBlock Text="{Binding rating}"/>
-                                    <TextBlock Text="%"/>
-                                </WrapPanel>
-
-                            </WrapPanel>
-                            <WrapPanel Orientation="Horizontal" >
-                                <TextBlock Text="Скидка: "/>
-                                <TextBlock Text="{Binding CalculateDiscount}"/>
-                                <TextBlock Text="%"/>
-                            </WrapPanel>
+                    <Border Style="{StaticResource ListViewItemBorderStyle}">
+                        <Grid Margin="10" HorizontalAlignment="Stretch" Width="450">
+                            <StackPanel Style="{StaticResource VerticalStackPanelStyle}" HorizontalAlignment="Left">
+                                <StackPanel Style="{StaticResource HorizontalStackPanelStyle}">
+                                    <TextBlock Text="{Binding partner_name}" Style="{StaticResource DefaultTextBlockStyle}"/>
+                                </StackPanel>
+                                <TextBlock Text="{Binding director_name}" Style="{StaticResource DefaultTextBlockStyle}"/>
+                                <StackPanel Style="{StaticResource HorizontalStackPanelStyle}">
+                                    <TextBlock Text="+7 " Style="{StaticResource DefaultTextBlockStyle}"/>
+                                    <TextBlock Text="{Binding phone}" Style="{StaticResource DefaultTextBlockStyle}"/>
+                                </StackPanel>
+                                <StackPanel Style="{StaticResource HorizontalStackPanelStyle}">
+                                    <TextBlock Text="Рейтинг: " Style="{StaticResource DefaultTextBlockStyle}"/>
+                                    <TextBlock Text="{Binding rating}" Style="{StaticResource DefaultTextBlockStyle}"/>
+                                    <TextBlock Text="%" Style="{StaticResource DefaultTextBlockStyle}"/>
+                                </StackPanel>
+                            </StackPanel>
+                            <StackPanel Style="{StaticResource HorizontalStackPanelStyle}" HorizontalAlignment="Right">
+                                <TextBlock Text="Скидка: " Style="{StaticResource DefaultTextBlockStyle}"/>
+                                <TextBlock Text="{Binding partner_id, Converter={StaticResource DiscountConverter}}" Style="{StaticResource AccentTextBlockStyle}"/>
+                                <TextBlock Text="%" Style="{StaticResource DefaultTextBlockStyle}" Margin="2,0,0,0"/>
+                            </StackPanel>
                         </Grid>
                     </Border>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+
+        <!-- Кнопки управления -->
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10" Grid.Row="2">
+            <Button Content="Добавить" Click="AddPartner_Click" Margin="5"/>
+            <Button Content="Редактировать" Click="EditPartner_Click" Margin="5"/>
+        </StackPanel>
     </Grid>
 </Window>

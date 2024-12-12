@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище DostochkaModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="Хранилище UP_02Model" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Employees">
           <Key>
             <PropertyRef Name="employee_id" />
@@ -297,7 +297,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="Хранилище DostochkaModelContainer">
+        <EntityContainer Name="Хранилище UP_02ModelContainer">
           <EntitySet Name="Employees" EntityType="Self.Employees" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Materials" EntityType="Self.Materials" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MaterialType" EntityType="Self.MaterialType" Schema="dbo" store:Type="Tables" />
@@ -365,7 +365,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="DostochkaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="UP_02Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Employees">
           <Key>
             <PropertyRef Name="employee_id" />
@@ -751,9 +751,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище DostochkaModelContainer" CdmEntityContainer="Entities">
+        <EntityContainerMapping StorageEntityContainer="Хранилище UP_02ModelContainer" CdmEntityContainer="Entities">
           <EntitySetMapping Name="Employees">
-            <EntityTypeMapping TypeName="DostochkaModel.Employees">
+            <EntityTypeMapping TypeName="UP_02Model.Employees">
               <MappingFragment StoreEntitySet="Employees">
                 <ScalarProperty Name="employee_id" ColumnName="employee_id" />
                 <ScalarProperty Name="full_name" ColumnName="full_name" />
@@ -766,7 +766,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Materials">
-            <EntityTypeMapping TypeName="DostochkaModel.Materials">
+            <EntityTypeMapping TypeName="UP_02Model.Materials">
               <MappingFragment StoreEntitySet="Materials">
                 <ScalarProperty Name="material_id" ColumnName="material_id" />
                 <ScalarProperty Name="material_type_id" ColumnName="material_type_id" />
@@ -783,7 +783,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="MaterialType">
-            <EntityTypeMapping TypeName="DostochkaModel.MaterialType">
+            <EntityTypeMapping TypeName="UP_02Model.MaterialType">
               <MappingFragment StoreEntitySet="MaterialType">
                 <ScalarProperty Name="material_type_id" ColumnName="material_type_id" />
                 <ScalarProperty Name="material_type" ColumnName="material_type" />
@@ -792,7 +792,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="OrderDetails">
-            <EntityTypeMapping TypeName="DostochkaModel.OrderDetails">
+            <EntityTypeMapping TypeName="UP_02Model.OrderDetails">
               <MappingFragment StoreEntitySet="OrderDetails">
                 <ScalarProperty Name="order_detail_id" ColumnName="order_detail_id" />
                 <ScalarProperty Name="order_id" ColumnName="order_id" />
@@ -804,7 +804,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Orders">
-            <EntityTypeMapping TypeName="DostochkaModel.Orders">
+            <EntityTypeMapping TypeName="UP_02Model.Orders">
               <MappingFragment StoreEntitySet="Orders">
                 <ScalarProperty Name="order_id" ColumnName="order_id" />
                 <ScalarProperty Name="partner_id" ColumnName="partner_id" />
@@ -816,7 +816,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Partners">
-            <EntityTypeMapping TypeName="DostochkaModel.Partners">
+            <EntityTypeMapping TypeName="UP_02Model.Partners">
               <MappingFragment StoreEntitySet="Partners">
                 <ScalarProperty Name="partner_id" ColumnName="partner_id" />
                 <ScalarProperty Name="partner_type" ColumnName="partner_type" />
@@ -831,7 +831,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Personnel">
-            <EntityTypeMapping TypeName="DostochkaModel.Personnel">
+            <EntityTypeMapping TypeName="UP_02Model.Personnel">
               <MappingFragment StoreEntitySet="Personnel">
                 <ScalarProperty Name="personnel_id" ColumnName="personnel_id" />
                 <ScalarProperty Name="employee_id" ColumnName="employee_id" />
@@ -840,7 +840,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Products">
-            <EntityTypeMapping TypeName="DostochkaModel.Products">
+            <EntityTypeMapping TypeName="UP_02Model.Products">
               <MappingFragment StoreEntitySet="Products">
                 <ScalarProperty Name="product_id" ColumnName="product_id" />
                 <ScalarProperty Name="product_type_id" ColumnName="product_type_id" />
@@ -851,7 +851,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ProductType">
-            <EntityTypeMapping TypeName="DostochkaModel.ProductType">
+            <EntityTypeMapping TypeName="UP_02Model.ProductType">
               <MappingFragment StoreEntitySet="ProductType">
                 <ScalarProperty Name="product_type_id" ColumnName="product_type_id" />
                 <ScalarProperty Name="product_type" ColumnName="product_type" />
@@ -860,7 +860,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="SalesHistory">
-            <EntityTypeMapping TypeName="DostochkaModel.SalesHistory">
+            <EntityTypeMapping TypeName="UP_02Model.SalesHistory">
               <MappingFragment StoreEntitySet="SalesHistory">
                 <ScalarProperty Name="sale_id" ColumnName="sale_id" />
                 <ScalarProperty Name="partner_id" ColumnName="partner_id" />
@@ -871,7 +871,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Suppliers">
-            <EntityTypeMapping TypeName="DostochkaModel.Suppliers">
+            <EntityTypeMapping TypeName="UP_02Model.Suppliers">
               <MappingFragment StoreEntitySet="Suppliers">
                 <ScalarProperty Name="supplier_id" ColumnName="supplier_id" />
                 <ScalarProperty Name="supplier_type" ColumnName="supplier_type" />
@@ -881,7 +881,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="SupplyHistory">
-            <EntityTypeMapping TypeName="DostochkaModel.SupplyHistory">
+            <EntityTypeMapping TypeName="UP_02Model.SupplyHistory">
               <MappingFragment StoreEntitySet="SupplyHistory">
                 <ScalarProperty Name="supply_id" ColumnName="supply_id" />
                 <ScalarProperty Name="supplier_id" ColumnName="supplier_id" />
@@ -892,7 +892,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="DostochkaModel.sysdiagrams">
+            <EntityTypeMapping TypeName="UP_02Model.sysdiagrams">
               <MappingFragment StoreEntitySet="sysdiagrams">
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="principal_id" ColumnName="principal_id" />
@@ -903,7 +903,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Warehouse">
-            <EntityTypeMapping TypeName="DostochkaModel.Warehouse">
+            <EntityTypeMapping TypeName="UP_02Model.Warehouse">
               <MappingFragment StoreEntitySet="Warehouse">
                 <ScalarProperty Name="warehouse_id" ColumnName="warehouse_id" />
                 <ScalarProperty Name="material_id" ColumnName="material_id" />
