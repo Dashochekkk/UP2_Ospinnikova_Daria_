@@ -81,6 +81,20 @@ namespace Партнеры
                 MessageBox.Show("Выберите партнера для редактирования.", "Предупреждение", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
+        private void partnersListView_MouseDoubleClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            // Проверяем, выбран ли элемент в ListView
+            if (partnersListView.SelectedItem is Partners selectedPartner)
+            {
+                // Открываем окно с историей реализации
+                var saleHistoryWindow = new SaleHistoryWindow(selectedPartner.partner_id);
+                saleHistoryWindow.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Выберите партнера для просмотра истории реализации.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
     }
     public class DiscountConverter : IValueConverter
     {

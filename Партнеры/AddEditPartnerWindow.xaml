@@ -1,8 +1,10 @@
 ﻿<Window x:Class="Партнеры.AddEditPartnerWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Добавление/редактирование партнера" Height="450" Width="400"
-        Background="{StaticResource SecondaryBackgroundColor}">
+        Title="Добавление/Редактирование партнера"
+        Height="450" Width="600"
+        Background="#F4E8D3"
+        FontFamily="Segoe UI">
     <Grid Margin="10">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -15,25 +17,79 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
 
-        <TextBlock Text="Наименование:" Grid.Row="0" Margin="5"/>
-        <TextBox x:Name="NameTextBox" Grid.Row="1" Margin="5"/>
+        <!-- Наименование -->
+        <TextBlock Text="Наименование:" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center"/>
+        <TextBox Name="NameTextBox" Grid.Row="0" Grid.Column="1" Margin="5">
+            <TextBox.ToolTip>
+                <ToolTip Content="Введите наименование партнера"/>
+            </TextBox.ToolTip>
+        </TextBox>
 
-        <TextBlock Text="Тип партнера:" Grid.Row="2" Margin="5"/>
-        <ComboBox x:Name="TypeComboBox" Grid.Row="3" Margin="5">
-            <ComboBoxItem Content="Тип 1"/>
-            <ComboBoxItem Content="Тип 2"/>
+        <!-- Тип партнера (выпадающий список) -->
+        <TextBlock Text="Тип партнера:" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center"/>
+        <ComboBox Name="PartnerTypeComboBox" Grid.Row="1" Grid.Column="1" Margin="5">
+            <ComboBox.ToolTip>
+                <ToolTip Content="Выберите тип партнера"/>
+            </ComboBox.ToolTip>
         </ComboBox>
 
-        <TextBlock Text="Рейтинг:" Grid.Row="4" Margin="5"/>
-        <TextBox x:Name="RatingTextBox" Grid.Row="5" Margin="5"/>
+        <!-- Рейтинг -->
+        <TextBlock Text="Рейтинг:" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center"/>
+        <TextBox Name="RatingTextBox" Grid.Row="2" Grid.Column="1" Margin="5">
+            <TextBox.ToolTip>
+                <ToolTip Content="Введите рейтинг партнера (целое число)"/>
+            </TextBox.ToolTip>
+        </TextBox>
 
-        <TextBlock Text="Телефон:" Grid.Row="6" Margin="5"/>
-        <TextBox x:Name="PhoneTextBox" Grid.Row="7" Margin="5"/>
+        <!-- Адрес -->
+        <TextBlock Text="Адрес:" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center"/>
+        <TextBox Name="AddressTextBox" Grid.Row="3" Grid.Column="1" Margin="5">
+            <TextBox.ToolTip>
+                <ToolTip Content="Введите адрес партнера"/>
+            </TextBox.ToolTip>
+        </TextBox>
 
-        <StackPanel Grid.Row="8" Orientation="Horizontal" HorizontalAlignment="Center">
-            <Button Content="Сохранить" Click="Save_Click" Margin="5"/>
-            <Button Content="Отмена" Click="Cancel_Click" Margin="5"/>
+        <!-- ФИО директора -->
+        <TextBlock Text="ФИО директора:" Grid.Row="4" Grid.Column="0" VerticalAlignment="Center"/>
+        <TextBox Name="DirectorNameTextBox" Grid.Row="4" Grid.Column="1" Margin="5">
+            <TextBox.ToolTip>
+                <ToolTip Content="Введите ФИО директора"/>
+            </TextBox.ToolTip>
+        </TextBox>
+
+        <!-- Телефон -->
+        <TextBlock Text="Телефон:" Grid.Row="5" Grid.Column="0" VerticalAlignment="Center"/>
+        <TextBox Name="PhoneTextBox" Grid.Row="5" Grid.Column="1" Margin="5">
+            <TextBox.ToolTip>
+                <ToolTip Content="Введите телефон партнера"/>
+            </TextBox.ToolTip>
+        </TextBox>
+
+        <!-- Email -->
+        <TextBlock Text="Email:" Grid.Row="6" Grid.Column="0" VerticalAlignment="Center"/>
+        <TextBox Name="EmailTextBox" Grid.Row="6" Grid.Column="1" Margin="5">
+            <TextBox.ToolTip>
+                <ToolTip Content="Введите email партнера"/>
+            </TextBox.ToolTip>
+        </TextBox>
+
+        <!-- Кнопки сохранения и отмены -->
+        <StackPanel Grid.Row="7" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,10,0,0">
+            <Button Name="SaveButton" Content="Сохранить" Click="Save_Click" Width="100" Margin="5">
+                <Button.ToolTip>
+                    <ToolTip Content="Сохранить изменения"/>
+                </Button.ToolTip>
+            </Button>
+            <Button Name="CancelButton" Content="Отмена" Click="Cancel_Click" Width="100" Margin="5">
+                <Button.ToolTip>
+                    <ToolTip Content="Отменить изменения и закрыть окно"/>
+                </Button.ToolTip>
+            </Button>
         </StackPanel>
     </Grid>
 </Window>

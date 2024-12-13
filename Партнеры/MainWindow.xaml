@@ -25,7 +25,7 @@
         <TextBlock Text="Список партнеров" FontSize="20" HorizontalAlignment="Center" Margin="10" Grid.Row="0"/>
 
         <!-- Список партнеров -->
-        <ListView Name="partnersListView" Style="{StaticResource ListViewStyle}" Grid.Row="1" Margin="10">
+        <ListView Name="partnersListView" Style="{StaticResource ListViewStyle}" Grid.Row="1" Margin="10" MouseDoubleClick="partnersListView_MouseDoubleClick">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Border Style="{StaticResource ListViewItemBorderStyle}">
@@ -60,6 +60,7 @@
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10" Grid.Row="2">
             <Button Content="Добавить" Click="AddPartner_Click" Margin="5"/>
             <Button Content="Редактировать" Click="EditPartner_Click" Margin="5"/>
+            
         </StackPanel>
     </Grid>
 </Window>
