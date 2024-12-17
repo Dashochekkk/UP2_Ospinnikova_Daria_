@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
+using System.Windows.Navigation;
 
 namespace Партнеры
 {
@@ -20,6 +21,9 @@ namespace Партнеры
             // Передаем словарь скидок в конвертер
             DiscountConverter.DiscountDictionary = discountDictionary;
             LoadDataAsync();
+            images.Visibility = Visibility.Visible;
+            Textblock.Visibility = Visibility.Visible;
+            panel.Visibility = Visibility.Visible;
         }
 
         private async void LoadDataAsync()
@@ -88,12 +92,19 @@ namespace Партнеры
             {
                 // Открываем окно с историей реализации
                 var saleHistoryWindow = new SaleHistoryWindow(selectedPartner.partner_id);
-                saleHistoryWindow.ShowDialog();
+                 saleHistoryWindow.ShowDialog();
             }
             else
             {
                 MessageBox.Show("Выберите партнера для просмотра истории реализации.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
             }
+        }
+
+        private void CalculateMaterial_Click(object sender, RoutedEventArgs e)
+        {
+
+            CalculateMaterisl calculateMaterialWindow = new CalculateMaterisl();
+            calculateMaterialWindow.ShowDialog();
         }
     }
     public class DiscountConverter : IValueConverter

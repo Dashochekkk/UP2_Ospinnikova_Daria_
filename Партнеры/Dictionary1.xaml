@@ -1,0 +1,90 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- Цветовая схема -->
+    <SolidColorBrush x:Key="PrimaryBackgroundColor" Color="#FFFFFF"/>
+    <SolidColorBrush x:Key="SecondaryBackgroundColor" Color="#F4E8D3"/>
+    <SolidColorBrush x:Key="ButtonBackgroundColor" Color="#67BA80"/>
+    <SolidColorBrush x:Key="TextColor" Color="Black"/>
+
+    <!-- Шрифт -->
+    <FontFamily x:Key="DefaultFontFamily">Segoe UI</FontFamily>
+
+    <!-- Стили TextBlock -->
+    <Style TargetType="TextBlock">
+        <Setter Property="Foreground" Value="{StaticResource TextColor}"/>
+        <Setter Property="FontFamily" Value="{StaticResource DefaultFontFamily}"/>
+        
+        <Setter Property="FontSize" Value="12"/>
+    </Style>
+
+    <!-- Стили ListView -->
+    <Style TargetType="ListView">
+        <Setter Property="Background" Value="{StaticResource SecondaryBackgroundColor}"/>
+    </Style>
+
+    <!-- Стили ListViewItem -->
+    <Style TargetType="ListViewItem">
+        <Setter Property="Background" Value="{StaticResource SecondaryBackgroundColor}"/>
+        <Setter Property="Padding" Value="10"/>
+        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+    </Style>
+
+
+
+    <!-- Стили кнопок -->
+    <Style TargetType="Button">
+        <Setter Property="Background" Value="{StaticResource ButtonBackgroundColor}"/>
+        <Setter Property="Foreground" Value="{StaticResource TextColor}"/>
+        <Setter Property="FontFamily" Value="{StaticResource DefaultFontFamily}"/>
+        <Setter Property="FontSize" Value="12pt"/>
+        <Setter Property="Padding" Value="8"/>
+        <Setter Property="Margin" Value="12"/>
+        <Setter Property="Height" Value="35"/>
+    </Style>
+
+    <!-- Стили TextBox -->
+    <Style TargetType="TextBox">
+        <Setter Property="Background" Value="{StaticResource SecondaryBackgroundColor}"/>
+        <Setter Property="Foreground" Value="{StaticResource TextColor}"/>
+        <Setter Property="FontFamily" Value="{StaticResource DefaultFontFamily}"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="Padding" Value="5"/>
+        <Setter Property="Margin" Value="5"/>
+    </Style>
+
+    <!-- Стили ComboBox -->
+    <Style TargetType="ComboBox">
+        <Setter Property="Background" Value="{StaticResource SecondaryBackgroundColor}"/>
+        <Setter Property="Foreground" Value="{StaticResource TextColor}"/>
+        <Setter Property="FontFamily" Value="{StaticResource DefaultFontFamily}"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="Padding" Value="5"/>
+        <Setter Property="Margin" Value="5"/>
+    </Style>
+
+    <!-- Стили Window -->
+    <Style TargetType="Window">
+        <Setter Property="Background" Value="{StaticResource PrimaryBackgroundColor}"/>
+        <Setter Property="FontFamily" Value="{StaticResource DefaultFontFamily}"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="Title" Value="Заголовок окна"/>
+        <Setter Property="Icon" Value="Мастер пол.ico"/>
+
+    </Style>
+
+    <!-- Стили Grid -->
+    <Style TargetType="Grid">
+        <Setter Property="Background" Value="{StaticResource PrimaryBackgroundColor}"/>
+    </Style>
+
+    <!-- Стили Image -->
+    <Style TargetType="Image">
+        <Setter Property="Stretch" Value="Uniform"/>
+        <Setter Property="Margin" Value="10"/>
+    </Style>
+
+    <!-- Логотип -->
+    <Image x:Key="Logo" Source="Мастер пол.ico" Stretch="Uniform" Margin="10"/>
+
+</ResourceDictionary>

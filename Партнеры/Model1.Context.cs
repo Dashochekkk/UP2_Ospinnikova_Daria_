@@ -22,6 +22,7 @@ namespace Партнеры
                 _context = new Entities();
             return _context;
         }
+
         public Entities()
             : base("name=Entities")
         {

@@ -3,8 +3,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Добавление/Редактирование партнера"
         Height="450" Width="600"
-        Background="#F4E8D3"
-        FontFamily="Segoe UI">
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize">
     <Grid Margin="10">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -15,77 +15,82 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
+        <!-- Логотип -->
+        <Image Source="Мастер пол.png" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="0" Grid.ColumnSpan="2" Height="33" Margin="0,10,0,20" Width="768"/>
+        <!-- Заголовок -->
+        <TextBlock Text="Добавление и редактирование" FontSize="20" HorizontalAlignment="Center" Grid.Column="1" Margin="0,0,0,20" />
+        <!-- Логотип -->
         <!-- Наименование -->
-        <TextBlock Text="Наименование:" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center"/>
-        <TextBox Name="NameTextBox" Grid.Row="0" Grid.Column="1" Margin="5">
+        <TextBlock Text="Наименование:" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" Margin="5"/>
+        <TextBox Name="NameTextBox" Grid.Row="1" Grid.Column="1" Margin="5" Padding="5">
             <TextBox.ToolTip>
                 <ToolTip Content="Введите наименование партнера"/>
             </TextBox.ToolTip>
         </TextBox>
 
         <!-- Тип партнера (выпадающий список) -->
-        <TextBlock Text="Тип партнера:" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center"/>
-        <ComboBox Name="PartnerTypeComboBox" Grid.Row="1" Grid.Column="1" Margin="5">
+        <TextBlock Text="Тип партнера:" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" Margin="5"/>
+        <ComboBox Name="PartnerTypeComboBox" Grid.Row="2" Grid.Column="1" Margin="5" Padding="5">
             <ComboBox.ToolTip>
                 <ToolTip Content="Выберите тип партнера"/>
             </ComboBox.ToolTip>
         </ComboBox>
 
         <!-- Рейтинг -->
-        <TextBlock Text="Рейтинг:" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center"/>
-        <TextBox Name="RatingTextBox" Grid.Row="2" Grid.Column="1" Margin="5">
+        <TextBlock Text="Рейтинг:" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" Margin="5"/>
+        <TextBox Name="RatingTextBox" Grid.Row="3" Grid.Column="1" Margin="5" Padding="5">
             <TextBox.ToolTip>
                 <ToolTip Content="Введите рейтинг партнера (целое число)"/>
             </TextBox.ToolTip>
         </TextBox>
 
         <!-- Адрес -->
-        <TextBlock Text="Адрес:" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center"/>
-        <TextBox Name="AddressTextBox" Grid.Row="3" Grid.Column="1" Margin="5">
+        <TextBlock Text="Адрес:" Grid.Row="4" Grid.Column="0" VerticalAlignment="Center" Margin="5"/>
+        <TextBox Name="AddressTextBox" Grid.Row="4" Grid.Column="1" Margin="5" Padding="5">
             <TextBox.ToolTip>
                 <ToolTip Content="Введите адрес партнера"/>
             </TextBox.ToolTip>
         </TextBox>
 
         <!-- ФИО директора -->
-        <TextBlock Text="ФИО директора:" Grid.Row="4" Grid.Column="0" VerticalAlignment="Center"/>
-        <TextBox Name="DirectorNameTextBox" Grid.Row="4" Grid.Column="1" Margin="5">
+        <TextBlock Text="ФИО директора:" Grid.Row="5" Grid.Column="0" VerticalAlignment="Center" Margin="5"/>
+        <TextBox Name="DirectorNameTextBox" Grid.Row="5" Grid.Column="1" Margin="5" Padding="5">
             <TextBox.ToolTip>
                 <ToolTip Content="Введите ФИО директора"/>
             </TextBox.ToolTip>
         </TextBox>
 
         <!-- Телефон -->
-        <TextBlock Text="Телефон:" Grid.Row="5" Grid.Column="0" VerticalAlignment="Center"/>
-        <TextBox Name="PhoneTextBox" Grid.Row="5" Grid.Column="1" Margin="5">
+        <TextBlock Text="Телефон:" Grid.Row="6" Grid.Column="0" VerticalAlignment="Center" Margin="5"/>
+        <TextBox Name="PhoneTextBox" Grid.Row="6" Grid.Column="1" Margin="5" Padding="5">
             <TextBox.ToolTip>
                 <ToolTip Content="Введите телефон партнера"/>
             </TextBox.ToolTip>
         </TextBox>
 
         <!-- Email -->
-        <TextBlock Text="Email:" Grid.Row="6" Grid.Column="0" VerticalAlignment="Center"/>
-        <TextBox Name="EmailTextBox" Grid.Row="6" Grid.Column="1" Margin="5">
+        <TextBlock Text="Email:" Grid.Row="7" Grid.Column="0" VerticalAlignment="Center" Margin="5"/>
+        <TextBox Name="EmailTextBox" Grid.Row="7" Grid.Column="1" Margin="5" Padding="5">
             <TextBox.ToolTip>
                 <ToolTip Content="Введите email партнера"/>
             </TextBox.ToolTip>
         </TextBox>
 
         <!-- Кнопки сохранения и отмены -->
-        <StackPanel Grid.Row="7" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,10,0,0">
-            <Button Name="SaveButton" Content="Сохранить" Click="Save_Click" Width="100" Margin="5">
+        <StackPanel Grid.Row="8" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,20,0,0">
+            <Button Name="SaveButton" Content="Сохранить" Click="Save_Click" Width="100" Margin="5" Padding="5" >
                 <Button.ToolTip>
                     <ToolTip Content="Сохранить изменения"/>
                 </Button.ToolTip>
             </Button>
-            <Button Name="CancelButton" Content="Отмена" Click="Cancel_Click" Width="100" Margin="5">
+            <Button Name="CancelButton" Content="Отмена" Click="Cancel_Click" Width="100" Margin="5" Padding="5" >
                 <Button.ToolTip>
                     <ToolTip Content="Отменить изменения и закрыть окно"/>
                 </Button.ToolTip>

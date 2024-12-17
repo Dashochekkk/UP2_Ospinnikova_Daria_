@@ -3,6 +3,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Navigation;
 
 namespace Партнеры
 {
@@ -35,16 +36,13 @@ namespace Партнеры
             }
         }
 
-        private void CalculateMaterial_Click(object sender, RoutedEventArgs e)
-        {
-            // Скрываем другие элементы интерфейса
-            SaleHistoryListView.Visibility = Visibility.Collapsed;
-            ((TextBlock)FindName("TitleTextBlock")).Visibility = Visibility.Collapsed;
-            ((Button)sender).Visibility = Visibility.Collapsed;
+       
 
-            // Отображаем Frame и переходим на страницу MaterialCalculator
-            NavigationFrame.Visibility = Visibility.Visible;
-            NavigationFrame.Navigate(new MaterialCalculator());
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+           
+
         }
     }
 }

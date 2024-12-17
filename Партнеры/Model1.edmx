@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="Хранилище UP_02Model" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="Хранилище DostochkaModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Employees">
           <Key>
             <PropertyRef Name="employee_id" />
@@ -74,7 +74,7 @@
           <Property Name="email" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="phone" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="legal_address" Type="varchar" MaxLength="200" Nullable="false" />
-          <Property Name="inn" Type="varchar" MaxLength="20" />
+          <Property Name="inn" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="rating" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Personnel">
@@ -153,7 +153,7 @@
           <Property Name="quantity_issued" Type="int" Nullable="false" />
           <Property Name="quantity_written_off" Type="int" Nullable="false" />
         </EntityType>
-        <Association Name="FK__Materials__mater__37A5467C">
+        <Association Name="FK__Materials__mater__4E88ABD4">
           <End Role="MaterialType" Type="Self.MaterialType" Multiplicity="0..1" />
           <End Role="Materials" Type="Self.Materials" Multiplicity="*" />
           <ReferentialConstraint>
@@ -165,7 +165,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Materials__suppl__38996AB5">
+        <Association Name="FK__Materials__suppl__4F7CD00D">
           <End Role="Suppliers" Type="Self.Suppliers" Multiplicity="0..1" />
           <End Role="Materials" Type="Self.Materials" Multiplicity="*" />
           <ReferentialConstraint>
@@ -177,7 +177,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__OrderDeta__order__44FF419A">
+        <Association Name="FK__OrderDeta__order__5070F446">
           <End Role="Orders" Type="Self.Orders" Multiplicity="0..1" />
           <End Role="OrderDetails" Type="Self.OrderDetails" Multiplicity="*" />
           <ReferentialConstraint>
@@ -189,7 +189,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__OrderDeta__produ__45F365D3">
+        <Association Name="FK__OrderDeta__produ__5165187F">
           <End Role="Products" Type="Self.Products" Multiplicity="0..1" />
           <End Role="OrderDetails" Type="Self.OrderDetails" Multiplicity="*" />
           <ReferentialConstraint>
@@ -201,7 +201,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Orders__partner___4222D4EF">
+        <Association Name="FK__Orders__partner___52593CB8">
           <End Role="Partners" Type="Self.Partners" Multiplicity="0..1" />
           <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
           <ReferentialConstraint>
@@ -213,7 +213,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Personnel__emplo__32E0915F">
+        <Association Name="FK__Personnel__emplo__534D60F1">
           <End Role="Employees" Type="Self.Employees" Multiplicity="0..1" />
           <End Role="Personnel" Type="Self.Personnel" Multiplicity="*" />
           <ReferentialConstraint>
@@ -225,7 +225,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Products__produc__286302EC">
+        <Association Name="FK__Products__produc__5441852A">
           <End Role="ProductType" Type="Self.ProductType" Multiplicity="0..1" />
           <End Role="Products" Type="Self.Products" Multiplicity="*" />
           <ReferentialConstraint>
@@ -237,7 +237,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__SalesHist__partn__2B3F6F97">
+        <Association Name="FK__SalesHist__partn__5535A963">
           <End Role="Partners" Type="Self.Partners" Multiplicity="0..1" />
           <End Role="SalesHistory" Type="Self.SalesHistory" Multiplicity="*" />
           <ReferentialConstraint>
@@ -249,7 +249,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__SalesHist__produ__2C3393D0">
+        <Association Name="FK__SalesHist__produ__5629CD9C">
           <End Role="Products" Type="Self.Products" Multiplicity="0..1" />
           <End Role="SalesHistory" Type="Self.SalesHistory" Multiplicity="*" />
           <ReferentialConstraint>
@@ -261,7 +261,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__SupplyHis__mater__3F466844">
+        <Association Name="FK__SupplyHis__mater__571DF1D5">
           <End Role="Materials" Type="Self.Materials" Multiplicity="0..1" />
           <End Role="SupplyHistory" Type="Self.SupplyHistory" Multiplicity="*" />
           <ReferentialConstraint>
@@ -273,7 +273,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__SupplyHis__suppl__3E52440B">
+        <Association Name="FK__SupplyHis__suppl__5812160E">
           <End Role="Suppliers" Type="Self.Suppliers" Multiplicity="0..1" />
           <End Role="SupplyHistory" Type="Self.SupplyHistory" Multiplicity="*" />
           <ReferentialConstraint>
@@ -285,7 +285,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Warehouse__mater__3B75D760">
+        <Association Name="FK__Warehouse__mater__59063A47">
           <End Role="Materials" Type="Self.Materials" Multiplicity="0..1" />
           <End Role="Warehouse" Type="Self.Warehouse" Multiplicity="*" />
           <ReferentialConstraint>
@@ -297,7 +297,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="Хранилище UP_02ModelContainer">
+        <EntityContainer Name="Хранилище DostochkaModelContainer">
           <EntitySet Name="Employees" EntityType="Self.Employees" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Materials" EntityType="Self.Materials" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MaterialType" EntityType="Self.MaterialType" Schema="dbo" store:Type="Tables" />
@@ -312,59 +312,60 @@
           <EntitySet Name="SupplyHistory" EntityType="Self.SupplyHistory" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Warehouse" EntityType="Self.Warehouse" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__Materials__mater__37A5467C" Association="Self.FK__Materials__mater__37A5467C">
+          <AssociationSet Name="FK__Materials__mater__4E88ABD4" Association="Self.FK__Materials__mater__4E88ABD4">
             <End Role="MaterialType" EntitySet="MaterialType" />
             <End Role="Materials" EntitySet="Materials" />
           </AssociationSet>
-          <AssociationSet Name="FK__Materials__suppl__38996AB5" Association="Self.FK__Materials__suppl__38996AB5">
+          <AssociationSet Name="FK__Materials__suppl__4F7CD00D" Association="Self.FK__Materials__suppl__4F7CD00D">
             <End Role="Suppliers" EntitySet="Suppliers" />
             <End Role="Materials" EntitySet="Materials" />
           </AssociationSet>
-          <AssociationSet Name="FK__OrderDeta__order__44FF419A" Association="Self.FK__OrderDeta__order__44FF419A">
+          <AssociationSet Name="FK__OrderDeta__order__5070F446" Association="Self.FK__OrderDeta__order__5070F446">
             <End Role="Orders" EntitySet="Orders" />
             <End Role="OrderDetails" EntitySet="OrderDetails" />
           </AssociationSet>
-          <AssociationSet Name="FK__OrderDeta__produ__45F365D3" Association="Self.FK__OrderDeta__produ__45F365D3">
+          <AssociationSet Name="FK__OrderDeta__produ__5165187F" Association="Self.FK__OrderDeta__produ__5165187F">
             <End Role="Products" EntitySet="Products" />
             <End Role="OrderDetails" EntitySet="OrderDetails" />
           </AssociationSet>
-          <AssociationSet Name="FK__Orders__partner___4222D4EF" Association="Self.FK__Orders__partner___4222D4EF">
+          <AssociationSet Name="FK__Orders__partner___52593CB8" Association="Self.FK__Orders__partner___52593CB8">
             <End Role="Partners" EntitySet="Partners" />
             <End Role="Orders" EntitySet="Orders" />
           </AssociationSet>
-          <AssociationSet Name="FK__Personnel__emplo__32E0915F" Association="Self.FK__Personnel__emplo__32E0915F">
+          <AssociationSet Name="FK__Personnel__emplo__534D60F1" Association="Self.FK__Personnel__emplo__534D60F1">
             <End Role="Employees" EntitySet="Employees" />
             <End Role="Personnel" EntitySet="Personnel" />
           </AssociationSet>
-          <AssociationSet Name="FK__Products__produc__286302EC" Association="Self.FK__Products__produc__286302EC">
+          <AssociationSet Name="FK__Products__produc__5441852A" Association="Self.FK__Products__produc__5441852A">
             <End Role="ProductType" EntitySet="ProductType" />
             <End Role="Products" EntitySet="Products" />
           </AssociationSet>
-          <AssociationSet Name="FK__SalesHist__partn__2B3F6F97" Association="Self.FK__SalesHist__partn__2B3F6F97">
+          <AssociationSet Name="FK__SalesHist__partn__5535A963" Association="Self.FK__SalesHist__partn__5535A963">
             <End Role="Partners" EntitySet="Partners" />
             <End Role="SalesHistory" EntitySet="SalesHistory" />
           </AssociationSet>
-          <AssociationSet Name="FK__SalesHist__produ__2C3393D0" Association="Self.FK__SalesHist__produ__2C3393D0">
+          <AssociationSet Name="FK__SalesHist__produ__5629CD9C" Association="Self.FK__SalesHist__produ__5629CD9C">
             <End Role="Products" EntitySet="Products" />
             <End Role="SalesHistory" EntitySet="SalesHistory" />
           </AssociationSet>
-          <AssociationSet Name="FK__SupplyHis__mater__3F466844" Association="Self.FK__SupplyHis__mater__3F466844">
+          <AssociationSet Name="FK__SupplyHis__mater__571DF1D5" Association="Self.FK__SupplyHis__mater__571DF1D5">
             <End Role="Materials" EntitySet="Materials" />
             <End Role="SupplyHistory" EntitySet="SupplyHistory" />
           </AssociationSet>
-          <AssociationSet Name="FK__SupplyHis__suppl__3E52440B" Association="Self.FK__SupplyHis__suppl__3E52440B">
+          <AssociationSet Name="FK__SupplyHis__suppl__5812160E" Association="Self.FK__SupplyHis__suppl__5812160E">
             <End Role="Suppliers" EntitySet="Suppliers" />
             <End Role="SupplyHistory" EntitySet="SupplyHistory" />
           </AssociationSet>
-          <AssociationSet Name="FK__Warehouse__mater__3B75D760" Association="Self.FK__Warehouse__mater__3B75D760">
+          <AssociationSet Name="FK__Warehouse__mater__59063A47" Association="Self.FK__Warehouse__mater__59063A47">
             <End Role="Materials" EntitySet="Materials" />
             <End Role="Warehouse" EntitySet="Warehouse" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="UP_02Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="DostochkaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Employees">
           <Key>
             <PropertyRef Name="employee_id" />
@@ -376,7 +377,7 @@
           <Property Name="bank_details" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="has_family" Type="Boolean" Nullable="false" />
           <Property Name="health_status" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Personnel" Relationship="Self.FK__Personnel__emplo__32E0915F" FromRole="Employees" ToRole="Personnel" />
+          <NavigationProperty Name="Personnel" Relationship="Self.FK__Personnel__emplo__534D60F1" FromRole="Employees" ToRole="Personnel" />
         </EntityType>
         <EntityType Name="Materials">
           <Key>
@@ -393,10 +394,10 @@
           <Property Name="cost" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
           <Property Name="quantity_in_stock" Type="Int32" Nullable="false" />
           <Property Name="min_allowed_quantity" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="MaterialType" Relationship="Self.FK__Materials__mater__37A5467C" FromRole="Materials" ToRole="MaterialType" />
-          <NavigationProperty Name="Suppliers" Relationship="Self.FK__Materials__suppl__38996AB5" FromRole="Materials" ToRole="Suppliers" />
-          <NavigationProperty Name="SupplyHistory" Relationship="Self.FK__SupplyHis__mater__3F466844" FromRole="Materials" ToRole="SupplyHistory" />
-          <NavigationProperty Name="Warehouse" Relationship="Self.FK__Warehouse__mater__3B75D760" FromRole="Materials" ToRole="Warehouse" />
+          <NavigationProperty Name="MaterialType" Relationship="Self.FK__Materials__mater__4E88ABD4" FromRole="Materials" ToRole="MaterialType" />
+          <NavigationProperty Name="Suppliers" Relationship="Self.FK__Materials__suppl__4F7CD00D" FromRole="Materials" ToRole="Suppliers" />
+          <NavigationProperty Name="SupplyHistory" Relationship="Self.FK__SupplyHis__mater__571DF1D5" FromRole="Materials" ToRole="SupplyHistory" />
+          <NavigationProperty Name="Warehouse" Relationship="Self.FK__Warehouse__mater__59063A47" FromRole="Materials" ToRole="Warehouse" />
         </EntityType>
         <EntityType Name="MaterialType">
           <Key>
@@ -405,7 +406,7 @@
           <Property Name="material_type_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="material_type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="defect_rate" Type="Decimal" Precision="5" Scale="4" Nullable="false" />
-          <NavigationProperty Name="Materials" Relationship="Self.FK__Materials__mater__37A5467C" FromRole="MaterialType" ToRole="Materials" />
+          <NavigationProperty Name="Materials" Relationship="Self.FK__Materials__mater__4E88ABD4" FromRole="MaterialType" ToRole="Materials" />
         </EntityType>
         <EntityType Name="OrderDetails">
           <Key>
@@ -417,8 +418,8 @@
           <Property Name="quantity" Type="Int32" Nullable="false" />
           <Property Name="unit_price" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
           <Property Name="production_date" Type="DateTime" Nullable="false" Precision="0" />
-          <NavigationProperty Name="Orders" Relationship="Self.FK__OrderDeta__order__44FF419A" FromRole="OrderDetails" ToRole="Orders" />
-          <NavigationProperty Name="Products" Relationship="Self.FK__OrderDeta__produ__45F365D3" FromRole="OrderDetails" ToRole="Products" />
+          <NavigationProperty Name="Orders" Relationship="Self.FK__OrderDeta__order__5070F446" FromRole="OrderDetails" ToRole="Orders" />
+          <NavigationProperty Name="Products" Relationship="Self.FK__OrderDeta__produ__5165187F" FromRole="OrderDetails" ToRole="Products" />
         </EntityType>
         <EntityType Name="Orders">
           <Key>
@@ -430,8 +431,8 @@
           <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="total_cost" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
           <Property Name="payment_status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="OrderDetails" Relationship="Self.FK__OrderDeta__order__44FF419A" FromRole="Orders" ToRole="OrderDetails" />
-          <NavigationProperty Name="Partners" Relationship="Self.FK__Orders__partner___4222D4EF" FromRole="Orders" ToRole="Partners" />
+          <NavigationProperty Name="OrderDetails" Relationship="Self.FK__OrderDeta__order__5070F446" FromRole="Orders" ToRole="OrderDetails" />
+          <NavigationProperty Name="Partners" Relationship="Self.FK__Orders__partner___52593CB8" FromRole="Orders" ToRole="Partners" />
         </EntityType>
         <EntityType Name="Partners">
           <Key>
@@ -444,10 +445,10 @@
           <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="legal_address" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="inn" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="inn" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="rating" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Orders" Relationship="Self.FK__Orders__partner___4222D4EF" FromRole="Partners" ToRole="Orders" />
-          <NavigationProperty Name="SalesHistory" Relationship="Self.FK__SalesHist__partn__2B3F6F97" FromRole="Partners" ToRole="SalesHistory" />
+          <NavigationProperty Name="Orders" Relationship="Self.FK__Orders__partner___52593CB8" FromRole="Partners" ToRole="Orders" />
+          <NavigationProperty Name="SalesHistory" Relationship="Self.FK__SalesHist__partn__5535A963" FromRole="Partners" ToRole="SalesHistory" />
         </EntityType>
         <EntityType Name="Personnel">
           <Key>
@@ -456,7 +457,7 @@
           <Property Name="personnel_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="employee_id" Type="Int32" />
           <Property Name="equipment_access" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Employees" Relationship="Self.FK__Personnel__emplo__32E0915F" FromRole="Personnel" ToRole="Employees" />
+          <NavigationProperty Name="Employees" Relationship="Self.FK__Personnel__emplo__534D60F1" FromRole="Personnel" ToRole="Employees" />
         </EntityType>
         <EntityType Name="Products">
           <Key>
@@ -467,9 +468,9 @@
           <Property Name="product_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="article" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="min_partner_cost" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
-          <NavigationProperty Name="OrderDetails" Relationship="Self.FK__OrderDeta__produ__45F365D3" FromRole="Products" ToRole="OrderDetails" />
-          <NavigationProperty Name="ProductType" Relationship="Self.FK__Products__produc__286302EC" FromRole="Products" ToRole="ProductType" />
-          <NavigationProperty Name="SalesHistory" Relationship="Self.FK__SalesHist__produ__2C3393D0" FromRole="Products" ToRole="SalesHistory" />
+          <NavigationProperty Name="OrderDetails" Relationship="Self.FK__OrderDeta__produ__5165187F" FromRole="Products" ToRole="OrderDetails" />
+          <NavigationProperty Name="ProductType" Relationship="Self.FK__Products__produc__5441852A" FromRole="Products" ToRole="ProductType" />
+          <NavigationProperty Name="SalesHistory" Relationship="Self.FK__SalesHist__produ__5629CD9C" FromRole="Products" ToRole="SalesHistory" />
         </EntityType>
         <EntityType Name="ProductType">
           <Key>
@@ -478,7 +479,7 @@
           <Property Name="product_type_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="product_type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="type_coefficient" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
-          <NavigationProperty Name="Products" Relationship="Self.FK__Products__produc__286302EC" FromRole="ProductType" ToRole="Products" />
+          <NavigationProperty Name="Products" Relationship="Self.FK__Products__produc__5441852A" FromRole="ProductType" ToRole="Products" />
         </EntityType>
         <EntityType Name="SalesHistory">
           <Key>
@@ -489,8 +490,8 @@
           <Property Name="product_id" Type="Int32" />
           <Property Name="quantity" Type="Int32" Nullable="false" />
           <Property Name="sale_date" Type="DateTime" Nullable="false" Precision="3" />
-          <NavigationProperty Name="Partners" Relationship="Self.FK__SalesHist__partn__2B3F6F97" FromRole="SalesHistory" ToRole="Partners" />
-          <NavigationProperty Name="Products" Relationship="Self.FK__SalesHist__produ__2C3393D0" FromRole="SalesHistory" ToRole="Products" />
+          <NavigationProperty Name="Partners" Relationship="Self.FK__SalesHist__partn__5535A963" FromRole="SalesHistory" ToRole="Partners" />
+          <NavigationProperty Name="Products" Relationship="Self.FK__SalesHist__produ__5629CD9C" FromRole="SalesHistory" ToRole="Products" />
         </EntityType>
         <EntityType Name="Suppliers">
           <Key>
@@ -500,8 +501,8 @@
           <Property Name="supplier_type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="supplier_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="inn" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Materials" Relationship="Self.FK__Materials__suppl__38996AB5" FromRole="Suppliers" ToRole="Materials" />
-          <NavigationProperty Name="SupplyHistory" Relationship="Self.FK__SupplyHis__suppl__3E52440B" FromRole="Suppliers" ToRole="SupplyHistory" />
+          <NavigationProperty Name="Materials" Relationship="Self.FK__Materials__suppl__4F7CD00D" FromRole="Suppliers" ToRole="Materials" />
+          <NavigationProperty Name="SupplyHistory" Relationship="Self.FK__SupplyHis__suppl__5812160E" FromRole="Suppliers" ToRole="SupplyHistory" />
         </EntityType>
         <EntityType Name="SupplyHistory">
           <Key>
@@ -512,8 +513,8 @@
           <Property Name="material_id" Type="Int32" />
           <Property Name="quantity" Type="Int32" Nullable="false" />
           <Property Name="supply_date" Type="DateTime" Nullable="false" Precision="3" />
-          <NavigationProperty Name="Materials" Relationship="Self.FK__SupplyHis__mater__3F466844" FromRole="SupplyHistory" ToRole="Materials" />
-          <NavigationProperty Name="Suppliers" Relationship="Self.FK__SupplyHis__suppl__3E52440B" FromRole="SupplyHistory" ToRole="Suppliers" />
+          <NavigationProperty Name="Materials" Relationship="Self.FK__SupplyHis__mater__571DF1D5" FromRole="SupplyHistory" ToRole="Materials" />
+          <NavigationProperty Name="Suppliers" Relationship="Self.FK__SupplyHis__suppl__5812160E" FromRole="SupplyHistory" ToRole="Suppliers" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -535,9 +536,9 @@
           <Property Name="quantity_reserved" Type="Int32" Nullable="false" />
           <Property Name="quantity_issued" Type="Int32" Nullable="false" />
           <Property Name="quantity_written_off" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Materials" Relationship="Self.FK__Warehouse__mater__3B75D760" FromRole="Warehouse" ToRole="Materials" />
+          <NavigationProperty Name="Materials" Relationship="Self.FK__Warehouse__mater__59063A47" FromRole="Warehouse" ToRole="Materials" />
         </EntityType>
-        <Association Name="FK__Personnel__emplo__32E0915F">
+        <Association Name="FK__Personnel__emplo__534D60F1">
           <End Role="Employees" Type="Self.Employees" Multiplicity="0..1" />
           <End Role="Personnel" Type="Self.Personnel" Multiplicity="*" />
           <ReferentialConstraint>
@@ -549,7 +550,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Materials__mater__37A5467C">
+        <Association Name="FK__Materials__mater__4E88ABD4">
           <End Role="MaterialType" Type="Self.MaterialType" Multiplicity="0..1" />
           <End Role="Materials" Type="Self.Materials" Multiplicity="*" />
           <ReferentialConstraint>
@@ -561,7 +562,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Materials__suppl__38996AB5">
+        <Association Name="FK__Materials__suppl__4F7CD00D">
           <End Role="Suppliers" Type="Self.Suppliers" Multiplicity="0..1" />
           <End Role="Materials" Type="Self.Materials" Multiplicity="*" />
           <ReferentialConstraint>
@@ -573,7 +574,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__SupplyHis__mater__3F466844">
+        <Association Name="FK__SupplyHis__mater__571DF1D5">
           <End Role="Materials" Type="Self.Materials" Multiplicity="0..1" />
           <End Role="SupplyHistory" Type="Self.SupplyHistory" Multiplicity="*" />
           <ReferentialConstraint>
@@ -585,7 +586,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Warehouse__mater__3B75D760">
+        <Association Name="FK__Warehouse__mater__59063A47">
           <End Role="Materials" Type="Self.Materials" Multiplicity="0..1" />
           <End Role="Warehouse" Type="Self.Warehouse" Multiplicity="*" />
           <ReferentialConstraint>
@@ -597,7 +598,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__OrderDeta__order__44FF419A">
+        <Association Name="FK__OrderDeta__order__5070F446">
           <End Role="Orders" Type="Self.Orders" Multiplicity="0..1" />
           <End Role="OrderDetails" Type="Self.OrderDetails" Multiplicity="*" />
           <ReferentialConstraint>
@@ -609,7 +610,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__OrderDeta__produ__45F365D3">
+        <Association Name="FK__OrderDeta__produ__5165187F">
           <End Role="Products" Type="Self.Products" Multiplicity="0..1" />
           <End Role="OrderDetails" Type="Self.OrderDetails" Multiplicity="*" />
           <ReferentialConstraint>
@@ -621,7 +622,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Orders__partner___4222D4EF">
+        <Association Name="FK__Orders__partner___52593CB8">
           <End Role="Partners" Type="Self.Partners" Multiplicity="0..1" />
           <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
           <ReferentialConstraint>
@@ -633,7 +634,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__SalesHist__partn__2B3F6F97">
+        <Association Name="FK__SalesHist__partn__5535A963">
           <End Role="Partners" Type="Self.Partners" Multiplicity="0..1" />
           <End Role="SalesHistory" Type="Self.SalesHistory" Multiplicity="*" />
           <ReferentialConstraint>
@@ -645,7 +646,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Products__produc__286302EC">
+        <Association Name="FK__Products__produc__5441852A">
           <End Role="ProductType" Type="Self.ProductType" Multiplicity="0..1" />
           <End Role="Products" Type="Self.Products" Multiplicity="*" />
           <ReferentialConstraint>
@@ -657,7 +658,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__SalesHist__produ__2C3393D0">
+        <Association Name="FK__SalesHist__produ__5629CD9C">
           <End Role="Products" Type="Self.Products" Multiplicity="0..1" />
           <End Role="SalesHistory" Type="Self.SalesHistory" Multiplicity="*" />
           <ReferentialConstraint>
@@ -669,7 +670,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__SupplyHis__suppl__3E52440B">
+        <Association Name="FK__SupplyHis__suppl__5812160E">
           <End Role="Suppliers" Type="Self.Suppliers" Multiplicity="0..1" />
           <End Role="SupplyHistory" Type="Self.SupplyHistory" Multiplicity="*" />
           <ReferentialConstraint>
@@ -696,51 +697,51 @@
           <EntitySet Name="SupplyHistory" EntityType="Self.SupplyHistory" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <EntitySet Name="Warehouse" EntityType="Self.Warehouse" />
-          <AssociationSet Name="FK__Personnel__emplo__32E0915F" Association="Self.FK__Personnel__emplo__32E0915F">
+          <AssociationSet Name="FK__Personnel__emplo__534D60F1" Association="Self.FK__Personnel__emplo__534D60F1">
             <End Role="Employees" EntitySet="Employees" />
             <End Role="Personnel" EntitySet="Personnel" />
           </AssociationSet>
-          <AssociationSet Name="FK__Materials__mater__37A5467C" Association="Self.FK__Materials__mater__37A5467C">
+          <AssociationSet Name="FK__Materials__mater__4E88ABD4" Association="Self.FK__Materials__mater__4E88ABD4">
             <End Role="MaterialType" EntitySet="MaterialType" />
             <End Role="Materials" EntitySet="Materials" />
           </AssociationSet>
-          <AssociationSet Name="FK__Materials__suppl__38996AB5" Association="Self.FK__Materials__suppl__38996AB5">
+          <AssociationSet Name="FK__Materials__suppl__4F7CD00D" Association="Self.FK__Materials__suppl__4F7CD00D">
             <End Role="Suppliers" EntitySet="Suppliers" />
             <End Role="Materials" EntitySet="Materials" />
           </AssociationSet>
-          <AssociationSet Name="FK__SupplyHis__mater__3F466844" Association="Self.FK__SupplyHis__mater__3F466844">
+          <AssociationSet Name="FK__SupplyHis__mater__571DF1D5" Association="Self.FK__SupplyHis__mater__571DF1D5">
             <End Role="Materials" EntitySet="Materials" />
             <End Role="SupplyHistory" EntitySet="SupplyHistory" />
           </AssociationSet>
-          <AssociationSet Name="FK__Warehouse__mater__3B75D760" Association="Self.FK__Warehouse__mater__3B75D760">
+          <AssociationSet Name="FK__Warehouse__mater__59063A47" Association="Self.FK__Warehouse__mater__59063A47">
             <End Role="Materials" EntitySet="Materials" />
             <End Role="Warehouse" EntitySet="Warehouse" />
           </AssociationSet>
-          <AssociationSet Name="FK__OrderDeta__order__44FF419A" Association="Self.FK__OrderDeta__order__44FF419A">
+          <AssociationSet Name="FK__OrderDeta__order__5070F446" Association="Self.FK__OrderDeta__order__5070F446">
             <End Role="Orders" EntitySet="Orders" />
             <End Role="OrderDetails" EntitySet="OrderDetails" />
           </AssociationSet>
-          <AssociationSet Name="FK__OrderDeta__produ__45F365D3" Association="Self.FK__OrderDeta__produ__45F365D3">
+          <AssociationSet Name="FK__OrderDeta__produ__5165187F" Association="Self.FK__OrderDeta__produ__5165187F">
             <End Role="Products" EntitySet="Products" />
             <End Role="OrderDetails" EntitySet="OrderDetails" />
           </AssociationSet>
-          <AssociationSet Name="FK__Orders__partner___4222D4EF" Association="Self.FK__Orders__partner___4222D4EF">
+          <AssociationSet Name="FK__Orders__partner___52593CB8" Association="Self.FK__Orders__partner___52593CB8">
             <End Role="Partners" EntitySet="Partners" />
             <End Role="Orders" EntitySet="Orders" />
           </AssociationSet>
-          <AssociationSet Name="FK__SalesHist__partn__2B3F6F97" Association="Self.FK__SalesHist__partn__2B3F6F97">
+          <AssociationSet Name="FK__SalesHist__partn__5535A963" Association="Self.FK__SalesHist__partn__5535A963">
             <End Role="Partners" EntitySet="Partners" />
             <End Role="SalesHistory" EntitySet="SalesHistory" />
           </AssociationSet>
-          <AssociationSet Name="FK__Products__produc__286302EC" Association="Self.FK__Products__produc__286302EC">
+          <AssociationSet Name="FK__Products__produc__5441852A" Association="Self.FK__Products__produc__5441852A">
             <End Role="ProductType" EntitySet="ProductType" />
             <End Role="Products" EntitySet="Products" />
           </AssociationSet>
-          <AssociationSet Name="FK__SalesHist__produ__2C3393D0" Association="Self.FK__SalesHist__produ__2C3393D0">
+          <AssociationSet Name="FK__SalesHist__produ__5629CD9C" Association="Self.FK__SalesHist__produ__5629CD9C">
             <End Role="Products" EntitySet="Products" />
             <End Role="SalesHistory" EntitySet="SalesHistory" />
           </AssociationSet>
-          <AssociationSet Name="FK__SupplyHis__suppl__3E52440B" Association="Self.FK__SupplyHis__suppl__3E52440B">
+          <AssociationSet Name="FK__SupplyHis__suppl__5812160E" Association="Self.FK__SupplyHis__suppl__5812160E">
             <End Role="Suppliers" EntitySet="Suppliers" />
             <End Role="SupplyHistory" EntitySet="SupplyHistory" />
           </AssociationSet>
@@ -750,9 +751,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище UP_02ModelContainer" CdmEntityContainer="Entities">
+        <EntityContainerMapping StorageEntityContainer="Хранилище DostochkaModelContainer" CdmEntityContainer="Entities">
           <EntitySetMapping Name="Employees">
-            <EntityTypeMapping TypeName="UP_02Model.Employees">
+            <EntityTypeMapping TypeName="DostochkaModel.Employees">
               <MappingFragment StoreEntitySet="Employees">
                 <ScalarProperty Name="employee_id" ColumnName="employee_id" />
                 <ScalarProperty Name="full_name" ColumnName="full_name" />
@@ -765,7 +766,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Materials">
-            <EntityTypeMapping TypeName="UP_02Model.Materials">
+            <EntityTypeMapping TypeName="DostochkaModel.Materials">
               <MappingFragment StoreEntitySet="Materials">
                 <ScalarProperty Name="material_id" ColumnName="material_id" />
                 <ScalarProperty Name="material_type_id" ColumnName="material_type_id" />
@@ -782,7 +783,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="MaterialType">
-            <EntityTypeMapping TypeName="UP_02Model.MaterialType">
+            <EntityTypeMapping TypeName="DostochkaModel.MaterialType">
               <MappingFragment StoreEntitySet="MaterialType">
                 <ScalarProperty Name="material_type_id" ColumnName="material_type_id" />
                 <ScalarProperty Name="material_type" ColumnName="material_type" />
@@ -791,7 +792,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="OrderDetails">
-            <EntityTypeMapping TypeName="UP_02Model.OrderDetails">
+            <EntityTypeMapping TypeName="DostochkaModel.OrderDetails">
               <MappingFragment StoreEntitySet="OrderDetails">
                 <ScalarProperty Name="order_detail_id" ColumnName="order_detail_id" />
                 <ScalarProperty Name="order_id" ColumnName="order_id" />
@@ -803,7 +804,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Orders">
-            <EntityTypeMapping TypeName="UP_02Model.Orders">
+            <EntityTypeMapping TypeName="DostochkaModel.Orders">
               <MappingFragment StoreEntitySet="Orders">
                 <ScalarProperty Name="order_id" ColumnName="order_id" />
                 <ScalarProperty Name="partner_id" ColumnName="partner_id" />
@@ -815,7 +816,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Partners">
-            <EntityTypeMapping TypeName="UP_02Model.Partners">
+            <EntityTypeMapping TypeName="DostochkaModel.Partners">
               <MappingFragment StoreEntitySet="Partners">
                 <ScalarProperty Name="partner_id" ColumnName="partner_id" />
                 <ScalarProperty Name="partner_type" ColumnName="partner_type" />
@@ -830,7 +831,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Personnel">
-            <EntityTypeMapping TypeName="UP_02Model.Personnel">
+            <EntityTypeMapping TypeName="DostochkaModel.Personnel">
               <MappingFragment StoreEntitySet="Personnel">
                 <ScalarProperty Name="personnel_id" ColumnName="personnel_id" />
                 <ScalarProperty Name="employee_id" ColumnName="employee_id" />
@@ -839,7 +840,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Products">
-            <EntityTypeMapping TypeName="UP_02Model.Products">
+            <EntityTypeMapping TypeName="DostochkaModel.Products">
               <MappingFragment StoreEntitySet="Products">
                 <ScalarProperty Name="product_id" ColumnName="product_id" />
                 <ScalarProperty Name="product_type_id" ColumnName="product_type_id" />
@@ -850,7 +851,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ProductType">
-            <EntityTypeMapping TypeName="UP_02Model.ProductType">
+            <EntityTypeMapping TypeName="DostochkaModel.ProductType">
               <MappingFragment StoreEntitySet="ProductType">
                 <ScalarProperty Name="product_type_id" ColumnName="product_type_id" />
                 <ScalarProperty Name="product_type" ColumnName="product_type" />
@@ -859,7 +860,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="SalesHistory">
-            <EntityTypeMapping TypeName="UP_02Model.SalesHistory">
+            <EntityTypeMapping TypeName="DostochkaModel.SalesHistory">
               <MappingFragment StoreEntitySet="SalesHistory">
                 <ScalarProperty Name="sale_id" ColumnName="sale_id" />
                 <ScalarProperty Name="partner_id" ColumnName="partner_id" />
@@ -870,7 +871,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Suppliers">
-            <EntityTypeMapping TypeName="UP_02Model.Suppliers">
+            <EntityTypeMapping TypeName="DostochkaModel.Suppliers">
               <MappingFragment StoreEntitySet="Suppliers">
                 <ScalarProperty Name="supplier_id" ColumnName="supplier_id" />
                 <ScalarProperty Name="supplier_type" ColumnName="supplier_type" />
@@ -880,7 +881,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="SupplyHistory">
-            <EntityTypeMapping TypeName="UP_02Model.SupplyHistory">
+            <EntityTypeMapping TypeName="DostochkaModel.SupplyHistory">
               <MappingFragment StoreEntitySet="SupplyHistory">
                 <ScalarProperty Name="supply_id" ColumnName="supply_id" />
                 <ScalarProperty Name="supplier_id" ColumnName="supplier_id" />
@@ -891,7 +892,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="UP_02Model.sysdiagrams">
+            <EntityTypeMapping TypeName="DostochkaModel.sysdiagrams">
               <MappingFragment StoreEntitySet="sysdiagrams">
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="principal_id" ColumnName="principal_id" />
@@ -902,7 +903,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Warehouse">
-            <EntityTypeMapping TypeName="UP_02Model.Warehouse">
+            <EntityTypeMapping TypeName="DostochkaModel.Warehouse">
               <MappingFragment StoreEntitySet="Warehouse">
                 <ScalarProperty Name="warehouse_id" ColumnName="warehouse_id" />
                 <ScalarProperty Name="material_id" ColumnName="material_id" />
