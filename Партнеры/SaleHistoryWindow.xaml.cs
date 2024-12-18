@@ -27,10 +27,10 @@ namespace Партнеры
             {
                 // Загрузка истории продаж с данными из таблицы Products
                 var sales = context.SalesHistory
-                    .Where(s => s.partner_id == partnerId)
-                    .Include(s => s.Products) // Загружаем связанные данные из таблицы Products
-                    .OrderByDescending(s => s.sale_date)
-                    .ToList();
+            .Where(s => s.partner_id == partnerId)
+            .Include(s => s.Products) // Загружаем связанные данные из таблицы Products
+            .OrderByDescending(s => s.sale_date)
+            .ToList();
 
                 SaleHistoryListView.ItemsSource = sales;
             }

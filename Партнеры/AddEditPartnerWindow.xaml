@@ -4,6 +4,7 @@
         Title="Добавление/Редактирование партнера"
         Height="450" Width="600"
         WindowStartupLocation="CenterScreen"
+        Icon="Мастер пол.ico"
         ResizeMode="NoResize">
     <Grid Margin="10">
         <Grid.RowDefinitions>

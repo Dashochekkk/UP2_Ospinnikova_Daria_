@@ -49,7 +49,7 @@
                                 <StackPanel Orientation="Horizontal">
                                     <TextBlock Text="Рейтинг: "  />
                                     <TextBlock Text="{Binding rating}"  />
-                                    <TextBlock Text="%"  />
+                                    
                                 </StackPanel>
                             </StackPanel>
 
